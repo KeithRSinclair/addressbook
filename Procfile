@@ -1,0 +1,1 @@
+web: gunicorn myaddressbook.wsgi --log-file -
