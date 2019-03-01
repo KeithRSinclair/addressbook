@@ -80,10 +80,11 @@ WSGI_APPLICATION = 'myaddressbook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
     }
 }
+DATABASES['default'] = dj_database_url.config(
+    default='postgres://lgvnarekqkaunf:2758af5e96725497d241e37d2257b51127b75766e41b87c71adf24cb690c84f1@ec2-54-243-128-95.compute-1.amazonaws.com:5432/d317p8f8svgkmo')
 
 
 # Password validation
