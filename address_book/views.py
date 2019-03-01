@@ -37,3 +37,14 @@ def edit(request, list_id):
     else:
         get_address = Address.objects.get(pk=list_id)
         return render(request, 'edit.html', {'get_address': get_address})
+
+
+def delete(request, list_id):
+    if request.method == 'POST':
+        current_address = Address.objects.get(pk=list_id)
+        current_address.delete()
+        messages.success(request, ('Address has been deletd'))
+        return redirect('home')
+    else:
+        messages.success(request, ('Nothing to see here..'))
+        return redirect('home')
