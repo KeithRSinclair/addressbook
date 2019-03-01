@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Edit Addresses</h3>
+{% if  get_address %}
+    <form method='POST'>
+    {% csrf_token %}
+        <!-- Full Name -->
+        <div class="form-group">                      
+            <input type="text" class="form-control" value="{{ get_address.name }}" name="name">
+        </div>
+        <!-- Phone -->
+        <div class="form-group">            
+            <input type="text" class="form-control" value="{{ get_address.phone }}" name="phone">
+        </div>
+        <!-- Email -->
+         <div class="form-group">                       
+            <input type="email" class="form-control" value="{{ get_address.email }}" name="email">
+        </div>    
+        <!-- Address -->
+         <div class="form-group">                      
+            <input type="text" class="form-control" value="{{ get_address.address1 }}" name="address1">           
+        </div> 
+        <!-- Address -->
+         <div class="form-group">            
+            <input type="text" class="form-control" value="{{ get_address.address2 }}" name="address2">           
+        </div> 
+        <!-- City -->
+         <div class="form-group">            
+            <input type="text" class="form-control" value="{{ get_address.city }}" name="city">           
+        </div>
+        <!-- Postcode -->
+         <div class="form-group">            
+            <input type="text" class="form-control" id="" aria-describedby="postcode" value="{{ get_address.postcode }}" name="postcode">
+        </div>
+        
+        <button type="submit" class="btn btn-warning">Edit Address</button>
+    </form>
+{% endif %}
+
+
+    {% if get_address %} 
+         
+    {% endif %}  
+{% endblock %}

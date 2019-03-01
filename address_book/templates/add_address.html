@@ -2,4 +2,41 @@
 
 {% block content %}
     <h1>Add Address</h1>
+    <div class="row">
+        <div class="col-md-6">    
+    <form method='POST'>
+    {% csrf_token %}
+        <!-- Full Name -->
+        <div class="form-group">                      
+            <input type="text" class="form-control" id="" aria-describedby="name" placeholder="Full Name" name="name">            
+        </div>
+        <!-- Phone -->
+        <div class="form-group">            
+            <input type="text" class="form-control" id="" aria-describedby="phone" placeholder="Phone Number" name="phone">
+        </div>
+        <!-- Email -->
+         <div class="form-group">                       
+            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Email Address" name="email">
+        </div>    
+        <!-- Address -->
+         <div class="form-group">                      
+            <input type="text" class="form-control" id="" aria-describedby="adress" placeholder="Address" name="address1">           
+        </div> 
+        <!-- Address -->
+         <div class="form-group">            
+            <input type="text" class="form-control" id="" aria-describedby="" placeholder="Address" name="address2">           
+        </div> 
+        <!-- City -->
+         <div class="form-group">            
+            <input type="text" class="form-control" id="" aria-describedby="city" placeholder="City" name="city">           
+        </div>
+        <!-- Postcode -->
+         <div class="form-group">            
+            <input type="text" class="form-control" id="" aria-describedby="postcode" placeholder="Postcode" name="postcode">
+        </div>
+        
+        <button type="submit" class="btn btn-warning">Add Address</button>
+    </form>
+     </div>
+    </div>
 {% endblock %}
